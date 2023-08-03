@@ -14,12 +14,20 @@ function Counter() {
   const [step, setStep] = useState(1);
   const [count, setcount] = useState(0);
 
+  function handlePreviousStep() {
+    setStep((ps) => (ps != 1 ? ps - 1 : 1));
+  }
+
+  function handleNextStep() {
+    setStep((ps) => ps + 1);
+  }
+
   return (
     <>
       <div>
-        <button>-</button>
+        <button onClick={handlePreviousStep}>-</button>
         Step: {step}
-        <button>+</button>
+        <button onClick={handleNextStep}>+</button>
       </div>
       <div>
         <button>-</button>
