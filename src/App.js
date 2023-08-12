@@ -55,7 +55,7 @@ function Counter() {
         <button onClick={handleNextCount}>+</button>
       </div>
       <div>
-        {step} days from today is {date.toDateString()}
+        {count * step} days from today is {date.toDateString()}
       </div>
     </>
   );
