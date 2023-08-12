@@ -33,6 +33,10 @@ function Counter() {
     setCount((sc) => sc + 1);
   }
 
+  function handleReset() {
+    setCount(0);
+    setStep(1);
+  }
   return (
     <>
       <div>
@@ -57,6 +61,12 @@ function Counter() {
       <div>
         {count * step} days from today is {date.toDateString()}
       </div>
+
+      {count !== 0 || step !== 1 ? (
+        <div>
+          <button onClick={handleReset}>Reset</button>
+        </div>
+      ) : null}
     </>
   );
 }
